@@ -39,7 +39,8 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:7001/eureka,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka
+      #,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
 ---
 server:
   port: 8002
@@ -77,5 +78,6 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:7001/eureka,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka
+      #,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
 
