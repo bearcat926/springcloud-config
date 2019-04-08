@@ -1,0 +1,81 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8001
+
+spring:
+  profiles: dev
+  datasource:
+    #当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    #数据库连接url
+    url: jdbc:mysql://127.0.0.1:3306/clouddb01?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    dbcp2:
+      #数据库连接池的最小维持连接数
+      min-idle: 5
+      #初始化连接数
+      initial-size: 5
+      #最大连接数
+      max-total: 5
+      #等待连接获取的最大超时时间
+      max-wait-millis: 200
+
+mybatis:
+  #mapper映射文件
+  mapper-locations:
+   - classpath:mybatis/mapper/**/*.xml
+  #所有Entity别名类所在包
+  type-aliases-package: edu.bearcat.microservice.entities
+  #mybatis配置文件所在路径
+  config-location: classpath:mybatis/mybatis.cfg.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
+---
+server:
+  port: 8002
+
+spring:
+  profiles: test
+  datasource:
+    #当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    #数据库连接url
+    url: jdbc:mysql://127.0.0.1:3306/clouddb02?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    dbcp2:
+      #数据库连接池的最小维持连接数
+      min-idle: 5
+      #初始化连接数
+      initial-size: 5
+      #最大连接数
+      max-total: 5
+      #等待连接获取的最大超时时间
+      max-wait-millis: 200
+
+mybatis:
+  #mapper映射文件
+  mapper-locations:
+   - classpath:mybatis/mapper/**/*.xml
+  #所有Entity别名类所在包
+  type-aliases-package: edu.bearcat.microservice.entities
+  #mybatis配置文件所在路径
+  config-location: classpath:mybatis/mybatis.cfg.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
+
