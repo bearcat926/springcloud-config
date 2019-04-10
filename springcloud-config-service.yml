@@ -3,9 +3,6 @@ spring:
     active:
       - dev
 ---
-server:
-  port: 8001
-
 spring:
   profiles: dev
   datasource:
@@ -42,9 +39,6 @@ eureka:
       defaultZone: http://127.0.0.1:7001/eureka
       #,http://127.0.0.1:7002/eureka/,http://127.0.0.1:7003/eureka/
 ---
-server:
-  port: 8002
-
 spring:
   profiles: test
   datasource:
